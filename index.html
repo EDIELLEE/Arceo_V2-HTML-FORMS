@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Company Logo">
+            </div>
+            <header class="header">
+                <h1>Order Form</h1>
+                <h2>Input your details below!!!</h2>
+            </header>
+            <form action="#" method="POST">
+                <div class="form-section">
+                    <h3>Basic Info</h3>
+                    <div class="form-field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" min="0" max="120" required>
+                    </div>
+                </div>
+
+                <div id="dropdown">
+                    <button class="dropdown-toggle">
+                        <span>Menu</span>
+                        <i class="fas fa-caret-down"></i>
+                    </button>
+                    <ul class="menu">
+                        <li class="menu-item"><a href="#">Italian</a></li>
+                        <li class="menu-item"><a href="#">Chinese</a></li>
+                        <li class="menu-item dropdown">
+                            <a href="#" class="submenu-toggle">
+                                <span>Healthy Options</span>
+                                <i class="fas fa-caret-right"></i>
+                            </a>
+                            <!-- Submenu for Healthy Options -->
+                            <ul class="submenu submenu-healthy-options">
+                                <li class="submenu-item"><a href="#">Vegetarian</a></li>
+                                <li class="submenu-item"><a href="#">Vegan</a></li>
+                                <li class="submenu-item"><a href="#">Gluten-Free</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="#">Mexican</a></li>
+                        <li class="menu-item dropdown">
+                            <a href="#" class="submenu-toggle">
+                                <span>Drinks</span>
+                                <i class="fas fa-caret-right"></i>
+                            </a>
+                            <!-- Submenu for Specials -->
+                            <ul class="submenu submenu-specials">
+                                <li class="submenu-item"><a href="#">Coffee</a></li>
+                                <li class="submenu-item"><a href="#">Juice</a></li>
+                                <li class="submenu-item"><a href="#">Tea</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Mode of Payment</h3>
+                    <div class="form-field radio-buttons">
+                        <label><input type="radio" name="payment" value="Cash" required> Cash</label>
+                        <label><input type="radio" name="payment" value="Credit/Debit" required> Credit/Debit</label>
+                    </div>
+                </div>
+                <div class="form-section">
+                    <h3>Dine-in / Take-out</h3>
+                    <div id="dine-takeout-container" class="form-field radio-buttons" aria-label="Select Dine-in or Take-out">
+                        <label><input type="radio" name="dine-takeout" value="Dine-in" required> Dine-in</label>
+                        <label><input type="radio" name="dine-takeout" value="Take-out" required> Take-out</label>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="comments">Comments/Instruction (Optional)</label>
+                    <textarea id="comments" name="comments" style="resize: none;"></textarea>
+                </div>
+                <div class="button-container">
+                    <button type="submit" class="order-button">Order Placed</button>                      
+                    <button type="button" class="cancel-button">Cancel</button>
+                </div> 
+            </form>        
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

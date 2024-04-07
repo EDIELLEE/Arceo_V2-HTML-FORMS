@@ -1,0 +1,282 @@
+*,
+*::before,
+*::after 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body 
+{
+    font-family: "Roboto", sans-serif;
+    height: 130vh;
+    background-color: #f8f8f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button,
+li,
+a 
+{
+    all: unset;
+    box-sizing: border-box;
+}
+
+.container 
+{
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.logo 
+{
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.logo img 
+{
+    max-width: 150px;
+}
+
+.header 
+{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1,
+.form-section h3 
+{
+    font-size: 2em;
+    color: #8b4a3b;
+    margin-bottom: 10px;
+}
+
+.header h2 
+{
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-section 
+{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-field 
+{
+    margin-bottom: 15px;
+}
+
+.form-field input,
+.form-field textarea 
+{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    margin-top: 5px;
+}
+
+.form-field.radio-buttons 
+{
+    text-align: center;
+}
+
+.form-field.radio-buttons label 
+{
+    display: inline-block; 
+    margin-right: 2px; 
+    margin-left: 15px;
+}
+
+#dine-takeout-container 
+{
+    display: inline-block; 
+    margin-right: 25px; 
+    margin-left: 10px; 
+}
+
+#dine-takeout-container label 
+{
+    flex: 1; 
+}
+
+.form-field label 
+{
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.radio-buttons 
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.radio-buttons label 
+{
+    margin: 0 7px;
+}
+
+#dropdown 
+{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.dropdown-toggle 
+{
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-toggle:hover 
+{
+    background-color: #e0e0e0;
+}
+
+.menu,
+.submenu 
+{
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none;
+    cursor: pointer;
+}
+
+.menu 
+{
+    position: absolute;
+}
+
+.submenu 
+{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #fff; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submenu.submenu-healthy-options 
+{
+    position: absolute;
+    top: 35%;
+    left: 100%; 
+}
+
+.submenu.submenu-specials 
+{
+    position: absolute;
+    top: 75%;
+    left: 100%; 
+}
+
+.submenu-item 
+{
+    background-color: #fff; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submenu-item:last-child 
+{
+    border-bottom: none;
+}
+
+.submenu-item:hover 
+{
+    background-color: #f9f9f9;
+}
+
+.menu-item,
+.submenu-item 
+{
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #ccc;
+    display: block;
+    width: 154px;
+}
+
+.menu-item:last-child,
+.submenu-item:last-child 
+{
+    border-bottom: none;
+}
+
+.menu-item:hover,
+.submenu-item:hover 
+{
+    background-color: #f9f9f9;
+}
+
+.order-button,
+.cancel-button 
+{
+    background-color: #8b4a3b;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 13px;
+}
+
+.order-button:hover,
+.cancel-button:hover 
+{
+    background-color: #6b2a1d;
+}
+
+.cancel-button 
+{
+    background-color: #333;
+}
+
+.cancel-button:hover 
+{
+    background-color: #111;
+}
+
+.warning-message {
+    position: absolute;
+    top: 100%; 
+    left: 0; 
+    margin-left: 5px;
+    color: red; 
+    font-size: 0.8rem; 
+}
