@@ -42,21 +42,36 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Add event listener for click on main dropdown items
-    const allDropdownItems = document.querySelectorAll(".menu-item");
-    allDropdownItems.forEach(item => {
+    const mainDropdownItems = document.querySelectorAll(".menu-item:not(.dropdown)");
+    mainDropdownItems.forEach(item => {
         item.addEventListener("click", () => {
             if (item.classList.contains('submenu-item')) { // Check if the clicked item is a submenu item
                 handleSubmenuItemClicked(item);
             } else {
                 updateDropdownToggleContent(item.textContent); // Update dropdown toggle content with selected item
                 dropdownMenu.style.display = 'none'; // Hide the dropdown menu after selection
-                
-                // Remove the warning message if it exists
-                const warningMessage = document.querySelector('.warning-message');
-                if (warningMessage) {
-                    warningMessage.parentNode.removeChild(warningMessage);
-                }
             }
+        });
+    });
+
+    // Add event listener for mouse enter on main dropdown items
+    const mainDropdownParentItems = document.querySelectorAll(".dropdown");
+    mainDropdownParentItems.forEach(parentItem => {
+        const submenu = parentItem.querySelector('.submenu');
+        parentItem.addEventListener("mouseenter", () => {
+            submenu.style.display = 'block'; // Show submenu on mouse enter
+        });
+        parentItem.addEventListener("mouseleave", () => {
+            submenu.style.display = 'none'; // Hide submenu on mouse leave
+        });
+    });
+
+    // Add event listener for click on submenu items
+    const submenuItems = document.querySelectorAll(".submenu-item");
+    submenuItems.forEach(subitem => {
+        subitem.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent default anchor link behavior
+            handleSubmenuItemClicked(subitem);
         });
     });
 
@@ -66,49 +81,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const modalOverlay = document.querySelector('.modal-overlay');
 
     orderButton.addEventListener("click", function() {       
-        // Check if all required input fields are filled including dropdown selection
+        // Check if all required input fields are filled except for the Comments/Instructions field
         const inputFields = document.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], textarea');
         let allFieldsFilled = true;
-    
+
         inputFields.forEach(input => {
             if (input.value.trim() === '' && input.name !== "comments") {
                 allFieldsFilled = false;
             }
         });
-    
-        // Check if dropdown selection is made
-        const dropdownSelected = dropdownToggle.textContent.trim() !== "Menu";
-    
+
         // Display the message if all required fields are filled
-        if (allFieldsFilled && dropdownSelected) {
+        if (allFieldsFilled) {
             orderMessage.style.display = 'block';
             modalOverlay.style.display = 'flex'; // Show the modal overlay
-        } else {
-            // Show a warning message if dropdown is not selected
-            let warningMessage = document.querySelector('.warning-message');
-            if (!dropdownSelected) {
-                if (!warningMessage) {
-                    warningMessage = document.createElement('span');
-                    warningMessage.classList.add('warning-message');
-                    warningMessage.textContent = 'Please select an option from the dropdown.';
-                    dropdownToggle.parentNode.appendChild(warningMessage);
-                }
-            } else {
-                // Remove warning message if dropdown is selected
-                if (warningMessage) {
-                    warningMessage.parentNode.removeChild(warningMessage);
-                }
-            }
-        }
-    });
-
-    // Add event listener for click on the clear button
-    const clearButton = document.querySelector('.clear-button');
-    clearButton.addEventListener('click', () => {
-        // Remove the warning message if it exists
-        const warningMessage = document.querySelector('.warning-message');
-        if (warningMessage) {
-            warningMessage.parentNode.removeChild(warningMessage);
         }
     });
 

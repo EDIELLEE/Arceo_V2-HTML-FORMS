@@ -10,7 +10,7 @@
 body 
 {
     font-family: "Roboto", sans-serif;
-    height: 150vh;
+    height: 130vh;
     background-color: #f8f8f8;
     color: #333;
     display: flex;
@@ -93,23 +93,21 @@ a
     text-align: center;
 }
 
-.form-field.radio-buttons label 
-{
-    display: inline-block; 
-    margin-right: 2px; 
+.form-field.radio-buttons label {
+    display: inline-block; /* Display the labels inline */
+    margin-right: 2px; /* Add some space between the radio buttons */
     margin-left: 15px;
 }
 
-#dine-takeout-container 
-{
+#dine-takeout-container {
     display: inline-block; 
-    margin-right: 25px; 
-    margin-left: 10px; 
+    margin-right: 25px; /* Add some space between the radio buttons */
+    margin-left: 10px; /* Add space between the radio buttons */
 }
 
-#dine-takeout-container label 
-{
-    flex: 1; 
+/* Additional styling for radio buttons if needed */
+#dine-takeout-container label {
+    flex: 1; /* Distribute available space evenly between the radio buttons */
 }
 
 .form-field label 
@@ -270,12 +268,4 @@ a
 .cancel-button:hover 
 {
     background-color: #111;
-}
-
-.warning-message {
-    position: absolute;
-    top: 100%; /* Position it below the dropdown */
-    left: 5px; /* Align it with the left side of the dropdown */
-    color: red; /* Change the color to red for better visibility */
-    font-size: 0.8rem; /* Adjust the font size */
 }
