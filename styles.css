@@ -274,9 +274,8 @@ a
 
 .warning-message {
     position: absolute;
-    top: 100%; 
-    left: 0; 
-    margin-left: 5px;
-    color: red; 
-    font-size: 0.8rem; 
+    top: 100%; /* Position it below the dropdown */
+    left: 5px; /* Align it with the left side of the dropdown */
+    color: red; /* Change the color to red for better visibility */
+    font-size: 0.8rem; /* Adjust the font size */
 }
